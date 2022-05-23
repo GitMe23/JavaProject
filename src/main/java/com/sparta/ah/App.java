@@ -1,9 +1,6 @@
 package com.sparta.ah;
 
-/**
- * Hello world!
- *
- */
+//Written by Andrewg
 public class App 
 {
     public static void main( String[] args ) {
