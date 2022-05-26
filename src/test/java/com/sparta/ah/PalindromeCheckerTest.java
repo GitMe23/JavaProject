@@ -3,47 +3,66 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 
 public class PalindromeCheckerTest {
 
     @Test
-    @DisplayName("check isPalindrome returns false for non palindrome words")
-        void checkIsPalindromeReturnsFalse() {
-            Assertions.assertEquals(false, PalindromeChecker.isPalindrome("Sparta"));
-        }
+    @DisplayName("check that findLargestPalindrome returns empty array given non palindrome sentence")
+    void checkFindLargestPalindromeReturnsEmptyArray() {
 
-    @Test
-    @DisplayName("check isPalindrome returns true given a palindrome word")
-    void checkIsPalindromeReturnsTrue() {
-        Assertions.assertEquals(true, PalindromeChecker.isPalindrome("radar"));
-    }
-
-    @Test
-    @DisplayName("check isPalindrome returns false given a sentence containing a palindrome")
-    void checkIsPalindromeReturnsFalseGivenASentence() {
-        Assertions.assertEquals(false, PalindromeChecker.isPalindrome("a sentence containing radar"));
-    }
-
-    @Test
-    @DisplayName("check that findLargestPalindrome returns 'No palindromes found.' given a sentence ")
-    void checkfindLargestPalindromeReturnsMessageForNoPalindromes() {
-        Assertions.assertEquals("No palindromes found.",
-                PalindromeChecker.findLargestPalindrome("A sentence without palindromes"));
+        ArrayList<String> expected = new ArrayList<>();
+        Assertions.assertArrayEquals(expected.toArray(),
+                PalindromeChecker.findLargestPalindrome("a racing car").toArray());
     }
 
 
     @Test
-    @DisplayName("check that findLargestPalindrome returns a single palindrome in a sentence")
+    @DisplayName("check that findLargestPalindrome returns a palindrome")
     void checkFindLargestPalindromeReturnsSinglePalindrome() {
-        Assertions.assertEquals("racecar ",
-                PalindromeChecker.findLargestPalindrome("a racecar has a radar"));
+
+        ArrayList<String> expected = new ArrayList<>(Arrays.asList("racecar"));
+        Assertions.assertArrayEquals(expected.toArray(),
+                PalindromeChecker.findLargestPalindrome("a racecar on a track.").toArray());
     }
+
+    @Test
+    @DisplayName("check that findLargestPalindrome returns Largest palindrome given multiple palindromes")
+    void checkFindLargestPalindromeReturnsLargestPalindrome() {
+
+        ArrayList<String> expected = new ArrayList<>(Arrays.asList("racecar"));
+        Assertions.assertArrayEquals(expected.toArray(),
+                PalindromeChecker.findLargestPalindrome("a racecar with a radar on a track.").toArray());
+    }
+
 
     @Test
     @DisplayName("check that findLargestPalindrome returns multiple largest palindromes with same length")
     void checkFindLargestPalindromeReturnsMultiplePalindromesOfSameLength() {
-        Assertions.assertEquals("racecar rotator ",
-                PalindromeChecker.findLargestPalindrome("a racecar has a radar and a rotator"));
+
+        ArrayList<String> expected = new ArrayList<>(Arrays.asList("racecar", "rotator"));
+        Assertions.assertArrayEquals(expected.toArray(),
+                PalindromeChecker.findLargestPalindrome("a racecar has a radar and a rotator").toArray());
+    }
+
+    @Test
+    @DisplayName("check that findLargestPalindrome returns one instance of duplicate palindrome")
+    void checkFindLargestPalindromeReturnsOneInstanceOfDuplicatePalindrome() {
+
+        ArrayList<String> expected = new ArrayList<>(Arrays.asList("racecar"));
+        Assertions.assertArrayEquals(expected.toArray(),
+                PalindromeChecker.findLargestPalindrome("one racecar is blue and one racecar is red").toArray());
+    }
+
+    @Test
+    @DisplayName("check that findLargestPalindrome returns palindrome amongst punctuation")
+    void checkFindLargestPalindromeReturnsPalindromeAmongstPunctuation() {
+
+        ArrayList<String> expected = new ArrayList<>(Arrays.asList("racecar"));
+        Assertions.assertArrayEquals(expected.toArray(),
+                PalindromeChecker.findLargestPalindrome("Look at my racecar!").toArray());
     }
 
 
