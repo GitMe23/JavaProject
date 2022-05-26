@@ -6,9 +6,9 @@ import java.util.Set;
 public class PalindromeChecker {
 
     /*
-    Returns a string of the largest palindromes
+    Returns an array list of the largest palindromes
     in a given sentence.
-    Returns a message if there are no palindromes.
+    Returns an empty array list if there are no palindromes.
      */
     public static ArrayList<String> findLargestPalindrome(String sentenceToCheck) {
 
