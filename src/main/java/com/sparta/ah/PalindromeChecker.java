@@ -10,7 +10,7 @@ public class PalindromeChecker {
     in a given sentence.
     Returns a message if there are no palindromes.
      */
-    public static String findLargestPalindrome(String sentenceToCheck) {
+    public static ArrayList<String> findLargestPalindrome(String sentenceToCheck) {
 
         String[] splitSentence = sentenceToCheck.replaceAll("\\p{Punct}", "").split(" ");
 
@@ -44,16 +44,8 @@ public class PalindromeChecker {
         longestPalindromes.clear();
         longestPalindromes.addAll(palindromesWithoutDuplicates);
 
-        String answer = "";
-        for (String word : longestPalindromes)
-              {
-                  answer += word + " ";
-        }
-        if (answer != "") {
-            return answer;
-        } else {
-            return "No palindromes found.";
-        }
+        return longestPalindromes;
+
 
 
 }
