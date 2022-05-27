@@ -9,6 +9,16 @@ import java.util.Arrays;
 
 public class PalindromeCheckerTest {
 
+
+    @Test
+    @DisplayName("check that findLargestPalindrome returns empty array given empty string")
+    void checkFindLargestPalindromeReturnsEmptyArrayGivenEmptyString() {
+
+        ArrayList<String> expected = new ArrayList<>();
+        Assertions.assertArrayEquals(expected.toArray(),
+                PalindromeChecker.findLargestPalindrome("").toArray());
+    }
+
     @Test
     @DisplayName("check that findLargestPalindrome returns empty array given non palindrome sentence")
     void checkFindLargestPalindromeReturnsEmptyArray() {
@@ -20,12 +30,21 @@ public class PalindromeCheckerTest {
 
 
     @Test
-    @DisplayName("check that findLargestPalindrome returns a palindrome")
+    @DisplayName("check that findLargestPalindrome returns a single palindrome")
     void checkFindLargestPalindromeReturnsSinglePalindrome() {
 
         ArrayList<String> expected = new ArrayList<>(Arrays.asList("racecar"));
         Assertions.assertArrayEquals(expected.toArray(),
                 PalindromeChecker.findLargestPalindrome("a racecar on a track.").toArray());
+    }
+
+    @Test
+    @DisplayName("check that findLargestPalindrome returns empty array given palindrome less than 3 chars")
+    void checkFindLargestPalindromeReturnsEmptyArrayForPalindromeLessThanThreeChars() {
+
+        ArrayList<String> expected = new ArrayList<>();
+        Assertions.assertArrayEquals(expected.toArray(),
+                PalindromeChecker.findLargestPalindrome("palindrome less than 3 chars: nn").toArray());
     }
 
     @Test
@@ -64,6 +83,7 @@ public class PalindromeCheckerTest {
         Assertions.assertArrayEquals(expected.toArray(),
                 PalindromeChecker.findLargestPalindrome("Look at my racecar!").toArray());
     }
+
 
 
 }
