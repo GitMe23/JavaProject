@@ -1,12 +1,22 @@
 package com.sparta.ah;
 
-//Written by Andrewg
+import java.util.ArrayList;
+import java.util.Date;
+
+//Written by Andrew
 public class App 
 {
     public static void main( String[] args ) {
-        int timeOfDay = 21; //Strongly typed, Statically typed
-        String welcomeMessage = greeting(timeOfDay);
+        Date date = new Date();
+        int hour = date.getHours();
+        String welcomeMessage;
+        welcomeMessage = greeting(hour);
         System.out.println(welcomeMessage);
+
+        System.out.println("Information on the projects in my repository can be found in the readme.md file.");
+        System.out.println("Tests for all of my programs can be found in their respective test classes.");
+
+
     }
 
     public static String greeting(int timeOfDay) {
@@ -18,8 +28,10 @@ public class App
         } else if (timeOfDay <= 23){
             message = "Good Evening!";
         } else {
-            message = "Time of day entered is out of 24hr range";
+            message = "";
         }
         return message;
     }
+
+
 }
