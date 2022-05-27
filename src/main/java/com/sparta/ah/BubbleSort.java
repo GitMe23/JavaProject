@@ -2,6 +2,9 @@ package com.sparta.ah;
 
 public class BubbleSort {
 
+    /*
+    Returns a sorted array of integers using a bubble sort algorithm
+     */
     public static int[] bubbleSortIntegerArray(int[] arrayToSort) {
 
         int arrayLength = arrayToSort.length;

@@ -55,4 +55,6 @@ public class FibonacciPositionFinderTest {
         Assertions.assertEquals(0, FibonacciPositionFinder.getPosition(-7));
     }
 
+
+
 }
