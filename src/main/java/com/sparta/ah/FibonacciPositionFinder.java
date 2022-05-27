@@ -16,25 +16,7 @@ public class FibonacciPositionFinder {
             }
         }
     
-    public static String getFibonacciSequence(int position)
-    {
-        int num1 = 0, num2 = 1;
-
-        int counter = 0;
-        String sequence ="";
-        // Iterate till counter is position
-        while (counter < position) {
-
-           sequence = num1 + " ";
-
-            // Swap
-            int num3 = num2 + num1;
-            num1 = num2;
-            num2 = num3;
-            counter = counter + 1;
-        }
-        return sequence;
-    }
+    
     }
 
 
