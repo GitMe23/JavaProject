@@ -1,45 +1,40 @@
 package com.sparta.ah;
+import java.util.ArrayList;
 
 public class FibonacciPositionFinder {
 
-    public static int getPosition(int positionToFind) {
+    public static int getFibValueAtIndex(int positionToFind) {
         // base case
         // return 0 for 0 or any negative value
         if (positionToFind <= 0) {
             return 0;
         }  else if (positionToFind == 1) {
-                return 1;
-            }
-            // call method repeatedly to sum previous two positions until
-            else {
-                return getPosition(positionToFind - 1) + getPosition(positionToFind - 2);
-            }
+            return 1;
         }
+        // call method repeatedly to sum previous two positions until
+        else {
+            return getFibValueAtIndex(positionToFind - 1) + getFibValueAtIndex(positionToFind - 2);
+        }
+    }
 
-    public static String getFibonacciSequence(int position)
+    public static ArrayList<Integer> getFibonacciSequence(Integer sequenceLength)
     {
-        int num1 = 0, num2 = 1;
 
-        int counter = 0;
-        String sequence ="";
-        // Iterate till counter is position
-        while (counter < position) {
+        ArrayList<Integer> sequence = new ArrayList<>();
 
-           sequence = num1 + " ";
+        // null check as Integer class is used
+        if (sequenceLength != null && sequenceLength >= 0) {
 
-            // Swap
-            int num3 = num2 + num1;
-            num1 = num2;
-            num2 = num3;
-            counter = counter + 1;
+            // from zero, call getFibValueAtIndex() for i
+            for (int i = 0; i <= sequenceLength; i++){
+                sequence.add(getFibValueAtIndex(i));
+            }
+
+        } else{
+            sequence.add(0);
         }
         return sequence;
     }
 
-
-
-
-    }
-
-
+}
 
