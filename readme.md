@@ -27,8 +27,7 @@
     </li>
     <li><h4>FibonacciPositionFinder</h4>
         <p>The class takes an integer as input and gives the value in the Fibonacci sequence at that position</h4>
-    <p>I created a simple test class using JUnit. I used its Assertion class and methods to test the 
-            message function in the app and all subsequent programs. </p> 
+ 
         <h4> FibonacciPositionFinderTest</h4>
         <p> A JUnit class that tests for various positions given as input including negative values, zero, one and so forth.</p>
     </li>

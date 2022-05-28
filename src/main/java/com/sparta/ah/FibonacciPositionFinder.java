@@ -15,6 +15,8 @@ public class FibonacciPositionFinder {
         else {
             return getFibValueAtIndex(positionToFind - 1) + getFibValueAtIndex(positionToFind - 2);
         }
+    
+    
     }
 
     public static ArrayList<Integer> getFibonacciSequence(Integer sequenceLength)
